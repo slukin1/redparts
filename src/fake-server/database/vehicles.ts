@@ -103,4 +103,4 @@ const vehiclesDef: IVehicleDef[] = [
 
 export const vehicles: IVehicle[] = makeVehicles(vehiclesDef);
 
-export const userVehicles: IVehicle[] = vehicles.slice(0, 3);
+export const userVehicles: IVehicle[] = vehicles.slice(0, 4);

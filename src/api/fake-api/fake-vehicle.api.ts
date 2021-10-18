@@ -22,20 +22,20 @@ export class FakeVehicleApi extends VehicleApi {
         return getMakes();
     }
 
-    getModels(make: string): Promise<string[]> {
+    getModels(make: number): Promise<string[]> {
         return getModels(make);
     }
 
-    getYears(make: string, model: string): Promise<number[]> {
+    getYears(make: number, model: number): Promise<number[]> {
         return getYears(make, model);
     }
-    getSubmodels(make: string, model: string, year: number): Promise<string[]> {
+    getSubmodels(make: number, model: number, year: number): Promise<string[]> {
         return getSubmodels(make, model, year)
     }
-    getVariants(make: string, model: string, year: number, submodel: string): Promise<string[]> {
+    getVariants(make: number, model: number, year: number, submodel: string): Promise<string[]> {
         return getVariants(make, model, year, submodel)
     }
-    getVehicles(make: string, model: string, year: number, submodel: string, variant: string): Promise<IVehicle[]> {
+    getVehicles(make: number, model: number, year: number, submodel: string, variant: string): Promise<IVehicle[]> {
         return getVehicles(make, model, year, submodel, variant);
     }
 

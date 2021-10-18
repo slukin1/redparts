@@ -2,58 +2,81 @@
 import { clone, delayResponse, error } from '~/fake-server/utils';
 import { IVehicle } from '~/interfaces/vehicle';
 import { userVehicles, vehicles } from '~/fake-server/database/vehicles';
+import { debug } from 'console';
 
-export function getMakes(): Promise<string[]> {
+export async function getMakes(): Promise<object[]> {
+    const result: object[] = [];
+    let Makes = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4`)
+    .then(res => res.json())
+
+    Makes.Data.Make.forEach((make) => {
+        if (result.indexOf(make.manuName) === -1) {
+            result.push({key:make.manuName, value: make.Id});
+        }
+    });
+    debugger
+    
+    return Promise.resolve(result.sort((a, b)=> (a.key).localeCompare(b.key)))
+}
+
+export async function getModels(make: number): Promise<object[]> {
+    const result: object[] = [];
+    let Models = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4?Make=${make}`)
+    .then(res => res.json())
+    console.log(Models);
+    
+    Models.Data.Model.forEach((model) => {
+        if (result.indexOf(model.ModelName) === -1) {
+            result.push({key: model.ModelName, value:model.Id});
+        }
+    });
+    debugger
+    // console.log(result);
+    return Promise.resolve(result.sort())
+}
+
+export async function getYears(make: number, model: number): Promise<number[]> {
+    // const result: number[] = [];
+    let Years = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4?Make=${make}&Model=${model}`)
+    .then(res => res.json())
+    console.log(Years);
+    const result: number[] = Years.Data.Year
+    debugger
+    // console.log(result);
+    return Promise.resolve(result.sort().reverse())
+}
+
+export async function getSubmodels(make: number, model: number, year: number): Promise<string[]> {
+    debugger
     const result: string[] = [];
-
-    vehicles.forEach((vehicle) => {
-        if (result.indexOf(vehicle.make) === -1) {
-            result.push(vehicle.make);
+    let Submodels = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4?Make=${make}&Model=${model}&Year=${year}`)
+    .then(res => res.json())
+    Submodels.Data.Submodel.forEach((vehicle) => {
+        if(result.indexOf(vehicle.submodel) === -1) {
+            result.push(vehicle.submodel)
         }
-    });
+    })
     debugger
+    console.log(result);
     return delayResponse(Promise.resolve(result.sort()), 750);
 }
 
-export function getModels(make: string): Promise<string[]> {
-    const result: string[] = [];
-
-    vehicles.filter((x) => x.make === make).forEach((vehicle) => {
-        if (result.indexOf(vehicle.model) === -1) {
-            result.push(vehicle.model);
+export function getVariants(make: string, model: string, year: number, submodel: string): Promise<string[]> {
+    const result: string[] = []
+    vehicles.filter((x) => x.make === make && x.model === model && x.year === year && x.submodel === submodel).forEach((vehicle) => {
+        if(result.indexOf(vehicle.variant) === -1) {
+            result.push(vehicle.variant)
         }
-    });
+    })
     debugger
-    return delayResponse(Promise.resolve(result.sort()), 750);
-}
-
-export function getYears(make: string, model: string): Promise<number[]> {
-    const result: number[] = [];
-
-    vehicles.filter((x) => x.make === make && x.model === model).forEach((vehicle) => {
-        if (result.indexOf(vehicle.year) === -1) {
-            result.push(vehicle.year);
-        }
-    });
-    debugger
-    return delayResponse(Promise.resolve(result.sort()), 750);
-}
-
-export function getSubmodels(make: string, model: string, year: number): Promise<IVehicle[]> {
-    const result = vehicles.filter((x) => x.year === year && x.make === make && x.model === model);
-    debugger
-    return delayResponse(Promise.resolve(result.sort()), 750);
-}
-
-export function getVariants(make: string, model: string, year: number, submodel: string): Promise<IVehicle[]> {
-    const result = vehicles.filter((x) => x.year === year && x.make === make && x.model === model && x.submodel === submodel);
-    debugger
+    console.log(result);
     return delayResponse(Promise.resolve(result.sort()), 750);
 }
 
 export function getVehicles(make: string, model: string, year: number, submodel: string, variant: string): Promise<IVehicle[]> {
     const result = vehicles.filter((x) => x.year === year && x.make === make && x.model === model && x.submodel === submodel && x.variant === variant);
     debugger
+    console.log(result);
     return delayResponse(Promise.resolve(result.sort()), 750);
 }
 

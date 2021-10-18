@@ -21,6 +21,8 @@ function VehicleSelect(props: Props) {
         <div className={rootClasses} {...rootProps}>
             <div className="vehicle-select__list">
                 {form.items.map((item, itemIdx) => {
+                    console.log(item);
+                    
                     const options = item.options as Array<number | string | IVehicle>;
 
                     return (
@@ -40,8 +42,8 @@ function VehicleSelect(props: Props) {
                             >
                                 <option value="none">{item.placeholder}</option>
                                 {options.map((option, optionIdx) => (
-                                    <option key={optionIdx} value={form.serializeOption(option, item)}>
-                                        {form.serializeOption(option, item)}
+                                    <option key={optionIdx} value={form.serializeOption(option, item, 1)}>
+                                        {form.serializeOption(option, item, 2)}
                                     </option>
                                 ))}
                             </select>

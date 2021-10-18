@@ -16,7 +16,7 @@ interface VehicleSelectItemDef<T = any> {
 }
 
 interface VehicleSelectItem<T = any> extends VehicleSelectItemDef<T> {
-    value: string;
+    value: string | number;
     loading: boolean;
     options: T[];
     disabled: boolean,
@@ -46,12 +46,11 @@ function getItemValues(items: VehicleSelectItem[]): any[] {
     return items.reduce<any[]>((acc, prevItem) => [...acc, getItemValue(prevItem)], []);
 }
 
-function serializeOption(option: any, item: VehicleSelectItem): string {
+function serializeOption(option: any, item: VehicleSelectItem, type: number): string {
     if (item.serializeOptionFn) {
         return item.serializeOptionFn(option, item);
     }
-
-    return option;
+    return type == 1 ? option.value : option.key;
 }
 
 function deserializeOption<T extends any>(option: string, item: VehicleSelectItem<T>): T {
@@ -118,7 +117,7 @@ export default function useVehicleForm(options: IOptions = {}) {
             ),
         },
     ]));
-
+    // debugger
     const load = async (items: VehicleSelectItem[], index: number) => {
         cancelPrevRequestRef.current();
 
