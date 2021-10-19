@@ -71,7 +71,6 @@ export async function getVariants(make: number, model: number, year: number, sub
         }
     })
     debugger
-    console.log(result);
     return Promise.resolve(result.sort())
 }
 
@@ -88,7 +87,6 @@ export async function getVehicles(make: number, model: number, year: number, sub
         result.push({carId: engine.carId, make, model, year, submodel, variant, engine: y})
     })
     debugger
-    console.log(result);
     return Promise.resolve(result.sort())
 }
 

@@ -21,11 +21,11 @@ function BlockFinder() {
         if (!vehicle) {
             return;
         }
-
+        alert(`carId: ${vehicle.carId}`)
         router.push(
             ...hrefToRouterArgs(url.products({
                 filters: {
-                    filter_vehicle: vehicle.id.toString(),
+                    filter_vehicle: vehicle.carId.toString(),
                 },
             })),
         ).then();

@@ -15,7 +15,7 @@ function makeVehicles(defs: IVehicleDef[]): IVehicle[] {
         }
 
         return years.map((year) => ({
-            id: getNextId(),
+            carId: getNextId(),
             make: def.make,
             model: def.model,
             year,
