@@ -1,7 +1,7 @@
 export interface IVehicle {
-    id: number;
-    make: string;
-    model: string;
+    carId: number;
+    make: number;
+    model: number;
     year: number;
     submodel: string;
     variant: string;
