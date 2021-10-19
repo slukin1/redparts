@@ -13,7 +13,7 @@ export async function getMakes(): Promise<object[]> {
             result.push({key:make.manuName, value: make.Id});
         }
     });
-    debugger
+    // debugger
     return Promise.resolve(result.sort((a, b)=> (a.key).localeCompare(b.key)))
 }
 
@@ -21,14 +21,13 @@ export async function getModels(make: number): Promise<object[]> {
     const result: object[] = [];
     let Models = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4?Make=${make}`)
     .then(res => res.json())
-    console.log(Models);
     
     Models.Data.Model.forEach((model) => {
         if (result.indexOf(model.ModelName) === -1) {
             result.push({key: model.ModelName, value:model.Id});
         }
     });
-    debugger
+    // debugger
     return Promise.resolve(result.sort())
 }
 
@@ -36,9 +35,9 @@ export async function getYears(make: number, model: number): Promise<number[]> {
     // const result: number[] = [];
     let Years = await fetch(`https://catalogueapi.super10.com.au/v1/aPms/TecAlliance/VehicleMetadata4x4?Make=${make}&Model=${model}`)
     .then(res => res.json())
-    console.log(Years);
+
     const result: number[] = Years.Data.Year
-    debugger
+    // debugger
     return Promise.resolve(result.sort().reverse())
 }
 
@@ -55,7 +54,7 @@ export async function getSubmodels(make: number, model: number, year: number): P
             result.push({key:x, value:x})
         }
     })
-    debugger
+    // debugger
     return Promise.resolve(result.sort())
 }
 
@@ -70,7 +69,7 @@ export async function getVariants(make: number, model: number, year: number, sub
             result.push({key:y, value:y})
         }
     })
-    debugger
+    // debugger
     return Promise.resolve(result.sort())
 }
 
