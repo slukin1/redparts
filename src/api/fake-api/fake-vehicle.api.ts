@@ -18,11 +18,11 @@ import {
 
 export class FakeVehicleApi extends VehicleApi {
 
-    getMakes(): Promise<string[]> {
+    getMakes(): Promise<object[]> {
         return getMakes();
     }
 
-    getModels(make: number): Promise<string[]> {
+    getModels(make: number): Promise<number[]> {
         return getModels(make);
     }
 

@@ -21,7 +21,6 @@ function VehicleSelect(props: Props) {
         <div className={rootClasses} {...rootProps}>
             <div className="vehicle-select__list">
                 {form.items.map((item, itemIdx) => {
-                    console.log(item);
                     
                     const options = item.options as Array<number | string | IVehicle>;
 
