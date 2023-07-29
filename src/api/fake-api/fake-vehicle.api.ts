@@ -107,7 +107,6 @@ let vehicles: IVehicle[] = [];
 if (make == "Honda" && model == "Accord" && year == 2015 && submodel == "LX" && variant == "LX-S") {
 vehicles = [
   {
-    id: 1,
     make: 1,
     model: 1,
     year: 2015,
