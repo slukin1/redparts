@@ -83,16 +83,16 @@ export class FakeVehicleApi extends VehicleApi {
         //return getSubmodels(make, model, year)
     }
     //getVariants(make: number, model: number, year: number, submodel: string): Promise<string[]> {
-  getVariants(make: string, model: string, year: string, submodel: string): Promise<string[]> {
+  getVariants(make: string, model: string, year: number, submodel: string): Promise<string[]> {
     // Get a list of variants for a given make, model, year, and submodel.
     let variants: string[] = [];
-    if (make == "Honda" && model == "Accord" && year == "2015" && submodel == "LX") {
+    if (make == "Honda" && model == "Accord" && year == 2015 && submodel == "LX") {
       variants = ["LX-S", "LX-P", "LX-G"];
-    } else if (make == "Toyota" && model == "Camry" && year == "2015" && submodel == "LE") {
+    } else if (make == "Toyota" && model == "Camry" && year == 2015 && submodel == "LE") {
       variants = ["LE", "LE Plus", "SE"];
-    } else if (make == "Ford" && model == "F-150" && year == "2015" && submodel == "XL") {
+    } else if (make == "Ford" && model == "F-150" && year == 2015 && submodel == "XL") {
       variants = ["XL", "XLT", "Lariat"];
-    } else if (make == "Chevy" && model == "Silverado" && year == "2015" && submodel == "WT") {
+    } else if (make == "Chevy" && model == "Silverado" && year == 2015 && submodel == "WT") {
       variants = ["WT", "LT", "LT Trail Boss"];
     }
 
