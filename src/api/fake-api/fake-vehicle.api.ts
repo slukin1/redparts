@@ -114,7 +114,7 @@ vehicles = [
     variant: "LX-S",
   //  price: 25,000,
  //   mileage: 10,000,
-    fuelEfficiency: 30 mpg,
+ //   fuelEfficiency: 30 mpg,
   },
 ];
 } else if (make == "Toyota" && model == "Camry" && year == 2015 && submodel == "LE" && variant == "LE") {
