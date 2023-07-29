@@ -336,8 +336,8 @@ export function Search() {
                                                 <RadioButton
                                                     className="vehicles-list__item-radio"
                                                     name="header-current-vehicle"
-                                                    defaultValue={vehicle.id}
-                                                    checked={currentVehicle?.id === vehicle.id}
+                                                    defaultValue={vehicle.model}
+                                                    checked={currentVehicle?.model === vehicle.model}
                                                     onChange={handleChangeCurrentVehicle}
                                                 />
                                                 <span className="vehicles-list__item-info">
