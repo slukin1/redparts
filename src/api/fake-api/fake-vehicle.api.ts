@@ -46,8 +46,23 @@ export class FakeVehicleApi extends VehicleApi {
         //return getModels(make);
     }
 
-    getYears(make: number, model: number): Promise<number[]> {
-        return getYears(make, model);
+    //getYears(make: number, model: number): Promise<number[]> {
+    getYears(make: string, model: string): Promise<number[]> {
+    // Get a list of years for a given make and model.
+    let years = [];
+    if (make == "Honda" && model == "Accord") {
+      years = [2015, 2016, 2017, 2018, 2019];
+    } else if (make == "Toyota" && model == "Camry") {
+      years = [2015, 2016, 2017, 2018, 2019];
+    } else if (make == "Ford" && model == "F-150") {
+      years = [2015, 2016, 2017, 2018, 2019];
+    } else if (make == "Chevy" && model == "Silverado") {
+      years = [2015, 2016, 2017, 2018, 2019];
+    }
+
+    // Return a Promise of a list of number years.
+    return Promise.resolve(years);
+        //return getYears(make, model);
     }
     getSubmodels(make: number, model: number, year: number): Promise<string[]> {
         return getSubmodels(make, model, year)
