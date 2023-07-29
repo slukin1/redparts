@@ -30,7 +30,7 @@ export class FakeVehicleApi extends VehicleApi {
     //getModels(make: number): Promise<number[]> {
     getModels(make: string): Promise<string[]> {
     // Get a list of car models for a given make.
-    let models = [];
+    let models: string[] = [];
     if (make == "Honda") {
       models = ["Accord", "Civic", "CR-V"];
     } else if (make == "Toyota") {
