@@ -408,7 +408,7 @@ export function Search() {
                                 )}
 
                                 <AsyncAction
-                                    action={() => (addVehicle ? garageAddItem(addVehicle.id) : Promise.resolve())}
+                                    action={() => (addVehicle ? garageAddItem(addVehicle.model) : Promise.resolve())}
                                     render={({ run, loading }) => (
                                         <button
                                             type="button"
