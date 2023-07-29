@@ -48,7 +48,8 @@ function FilterVehicle(props: Props) {
         setCurrentVehicle(selectedVehicle || null);
 
         if (value !== null) {
-            updateValue(selectedVehicle?.id || null);
+           // updateValue(selectedVehicle?.id || null);
+            updateValue(selectedVehicle?.model || null);
         }
     };
 
