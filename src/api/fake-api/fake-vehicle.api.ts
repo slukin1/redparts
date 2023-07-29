@@ -124,7 +124,7 @@ vehicles = [
 {
 carId: 1,
 make: 1,
-model: "Camry",
+model: 3,
 year: 2015,
 submodel: "LE",
 variant: "LE",
@@ -138,7 +138,7 @@ vehicles = [
 {
 carId: 1,
 make: 3,
-model: "F-150",
+model: 4,
 year: 2015,
 submodel: "XL",
 variant: "XL",
@@ -150,15 +150,15 @@ variant: "XL",
 } else if (make == "Chevy" && model == "Silverado" && year == 2015 && submodel == "WT" && variant == "WT") {
 vehicles = [
 {
-id: 4,
-make: "Chevy",
-model: "Silverado",
+carId: 1,
+make: 5,
+model: 5,
 year: 2015,
 submodel: "WT",
 variant: "WT",
-price: 37,500,
-mileage: 25,000,
-fuelEfficiency: 18 mpg,
+//price: 37,500,
+//mileage: 25,000,
+//fuelEfficiency: 18 mpg,
 },
 ];
 }
