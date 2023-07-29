@@ -29,7 +29,8 @@ function FilterVehicle(props: Props) {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.checked && currentVehicle) {
-            updateValue(currentVehicle.id);
+          //  updateValue(currentVehicle.id);
+            updateValue(currentVehicle.model);
         } else {
             updateValue(null);
         }
