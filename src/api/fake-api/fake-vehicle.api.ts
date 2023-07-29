@@ -109,7 +109,7 @@ vehicles = [
   {
     id: 1,
     make: 1,
-    model: "Accord",
+    model: 1,
     year: 2015,
     submodel: "LX",
     variant: "LX-S",
