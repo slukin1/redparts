@@ -113,7 +113,7 @@ vehicles = [
     submodel: "LX",
     variant: "LX-S",
   //  price: 25,000,
-    mileage: 10,000,
+ //   mileage: 10,000,
     fuelEfficiency: 30 mpg,
   },
 ];
