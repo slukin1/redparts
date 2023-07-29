@@ -106,17 +106,17 @@ getVehicles(make: string, model: string, year: number, submodel: string, variant
 let vehicles: IVehicle[] = [];
 if (make == "Honda" && model == "Accord" && year == 2015 && submodel == "LX" && variant == "LX-S") {
 vehicles = [
-{
-id: 1,
-make: "Honda",
-model: "Accord",
-year: 2015,
-submodel: "LX",
-variant: "LX-S",
-price: 25,000,
-mileage: 10,000,
-fuelEfficiency: 30 mpg,
-},
+  {
+    id: 1,
+    make: 1,
+    model: "Accord",
+    year: 2015,
+    submodel: "LX",
+    variant: "LX-S",
+    price: 25,000,
+    mileage: 10,000,
+    fuelEfficiency: 30 mpg,
+  },
 ];
 } else if (make == "Toyota" && model == "Camry" && year == 2015 && submodel == "LE" && variant == "LE") {
 vehicles = [
