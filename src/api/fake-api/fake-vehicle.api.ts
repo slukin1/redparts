@@ -49,7 +49,7 @@ export class FakeVehicleApi extends VehicleApi {
     //getYears(make: number, model: number): Promise<number[]> {
     getYears(make: string, model: string): Promise<number[]> {
     // Get a list of years for a given make and model.
-    let years = [];
+    let years: number[] = [];
     if (make == "Honda" && model == "Accord") {
       years = [2015, 2016, 2017, 2018, 2019];
     } else if (make == "Toyota" && model == "Camry") {
