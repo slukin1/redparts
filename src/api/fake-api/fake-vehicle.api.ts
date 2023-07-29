@@ -131,6 +131,7 @@ variant: "LE",
 //price: 25,500,
 //mileage: 15,000,
 //fuelEfficiency: 35 mpg,
+    engine: "3.0L L4",
 },
 ];
 } else if (make == "Ford" && model == "F-150" && year == 2015 && submodel == "XL" && variant == "XL") {
@@ -145,6 +146,7 @@ variant: "XL",
 //price: 35,000,
 //mileage: 20,000,
 //fuelEfficiency: 20 mpg,
+    engine: "5.0L L4",
 },
 ];
 } else if (make == "Chevy" && model == "Silverado" && year == 2015 && submodel == "WT" && variant == "WT") {
@@ -159,6 +161,7 @@ variant: "WT",
 //price: 37,500,
 //mileage: 25,000,
 //fuelEfficiency: 18 mpg,
+    engine: "6.0L L4",
 },
 ];
 }
