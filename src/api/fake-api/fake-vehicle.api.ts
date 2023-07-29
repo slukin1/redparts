@@ -100,8 +100,71 @@ export class FakeVehicleApi extends VehicleApi {
     return Promise.resolve(variants);
         //return getVariants(make, model, year, submodel)
     }
-    getVehicles(make: number, model: number, year: number, submodel: string, variant: string): Promise<IVehicle[]> {
-        return getVehicles(make, model, year, submodel, variant);
+    //getVehicles(make: number, model: number, year: number, submodel: string, variant: string): Promise<IVehicle[]> {
+getVehicles(make: string, model: string, year: string, submodel: string, variant: string): Promise<IVehicle[]> {
+// Get a list of vehicles for a given make, model, year, submodel, and variant.
+let vehicles: IVehicle[] = [];
+if (make == "Honda" && model == "Accord" && year == "2015" && submodel == "LX" && variant == "LX-S") {
+vehicles = [
+{
+id: 1,
+make: "Honda",
+model: "Accord",
+year: 2015,
+submodel: "LX",
+variant: "LX-S",
+price: 25,000,
+mileage: 10,000,
+fuelEfficiency: 30 mpg,
+},
+];
+} else if (make == "Toyota" && model == "Camry" && year == "2015" && submodel == "LE" && variant == "LE") {
+vehicles = [
+{
+id: 2,
+make: "Toyota",
+model: "Camry",
+year: 2015,
+submodel: "LE",
+variant: "LE",
+price: 25,500,
+mileage: 15,000,
+fuelEfficiency: 35 mpg,
+},
+];
+} else if (make == "Ford" && model == "F-150" && year == "2015" && submodel == "XL" && variant == "XL") {
+vehicles = [
+{
+id: 3,
+make: "Ford",
+model: "F-150",
+year: 2015,
+submodel: "XL",
+variant: "XL",
+price: 35,000,
+mileage: 20,000,
+fuelEfficiency: 20 mpg,
+},
+];
+} else if (make == "Chevy" && model == "Silverado" && year == "2015" && submodel == "WT" && variant == "WT") {
+vehicles = [
+{
+id: 4,
+make: "Chevy",
+model: "Silverado",
+year: 2015,
+submodel: "WT",
+variant: "WT",
+price: 37,500,
+mileage: 25,000,
+fuelEfficiency: 18 mpg,
+},
+];
+}
+
+// Return a Promise of a list of IVehicles.
+return Promise.resolve(vehicles);
+        //return getVehicles(make, model, year, submodel, variant);
     }
 
     getVehicleByVin(vin: string): Promise<IVehicle> {
