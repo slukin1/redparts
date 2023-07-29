@@ -122,29 +122,29 @@ vehicles = [
 } else if (make == "Toyota" && model == "Camry" && year == 2015 && submodel == "LE" && variant == "LE") {
 vehicles = [
 {
-id: 2,
-make: "Toyota",
+carId: 1,
+make: 1,
 model: "Camry",
 year: 2015,
 submodel: "LE",
 variant: "LE",
-price: 25,500,
-mileage: 15,000,
-fuelEfficiency: 35 mpg,
+//price: 25,500,
+//mileage: 15,000,
+//fuelEfficiency: 35 mpg,
 },
 ];
 } else if (make == "Ford" && model == "F-150" && year == 2015 && submodel == "XL" && variant == "XL") {
 vehicles = [
 {
-id: 3,
-make: "Ford",
+carId: 1,
+make: 3,
 model: "F-150",
 year: 2015,
 submodel: "XL",
 variant: "XL",
-price: 35,000,
-mileage: 20,000,
-fuelEfficiency: 20 mpg,
+//price: 35,000,
+//mileage: 20,000,
+//fuelEfficiency: 20 mpg,
 },
 ];
 } else if (make == "Chevy" && model == "Silverado" && year == 2015 && submodel == "WT" && variant == "WT") {
