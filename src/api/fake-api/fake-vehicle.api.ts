@@ -27,8 +27,23 @@ export class FakeVehicleApi extends VehicleApi {
         //return getMakes();
     }
 
-    getModels(make: number): Promise<number[]> {
-        return getModels(make);
+    //getModels(make: number): Promise<number[]> {
+    getModels(make: string): Promise<string[]> {
+    // Get a list of car models for a given make.
+    let models = [];
+    if (make == "Honda") {
+      models = ["Accord", "Civic", "CR-V"];
+    } else if (make == "Toyota") {
+      models = ["Camry", "Corolla", "RAV4"];
+    } else if (make == "Ford") {
+      models = ["F-150", "Mustang", "Explorer"];
+    } else if (make == "Chevy") {
+      models = ["Silverado", "Camaro", "Tahoe"];
+    }
+
+    // Return a Promise of a list of string models.
+    return Promise.resolve(models);
+        //return getModels(make);
     }
 
     getYears(make: number, model: number): Promise<number[]> {
