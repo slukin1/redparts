@@ -30,7 +30,7 @@ function CompatibilityStatusBadge(props: Props) {
         if (product.compatibility === 'unknown') {
             return 'unknown';
         }
-        if (product.compatibility.includes(currentVehicle.id)) {
+        if (product.compatibility.includes(currentVehicle.model)) {
             return 'fit';
         }
 
