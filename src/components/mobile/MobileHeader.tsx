@@ -62,7 +62,7 @@ function MobileHeader() {
     };
 
     const onVehiclePickerSelect = (selectedVehicle: IVehicle | null) => {
-        garageSetCurrent(selectedVehicle?.id || null);
+        garageSetCurrent(selectedVehicle?.model || null);
     };
 
     const onSearchSubmit = (event: React.FormEvent) => {
