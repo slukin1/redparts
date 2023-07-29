@@ -18,8 +18,13 @@ import {
 
 export class FakeVehicleApi extends VehicleApi {
 
-    getMakes(): Promise<object[]> {
-        return getMakes();
+    //getMakes(): Promise<object[]> {
+    getMakes(): Promise<string[]> {
+        // Get a list of car makes.
+        let makes = ["Honda", "Toyota", "Ford", "Chevy"];
+        // Return a Promise of a list of string makes.
+        return Promise.resolve(makes);
+        //return getMakes();
     }
 
     getModels(make: number): Promise<number[]> {
