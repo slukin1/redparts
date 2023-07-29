@@ -352,7 +352,7 @@ export function Search() {
                                                     </span>
                                                 </span>
                                                 <AsyncAction
-                                                    action={() => garageRemoveItem(vehicle.id)}
+                                                    action={() => garageRemoveItem(vehicle.model)}
                                                     render={({ run, loading }) => (
                                                         <button
                                                             type="button"
