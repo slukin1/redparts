@@ -107,6 +107,7 @@ let vehicles: IVehicle[] = [];
 if (make == "Honda" && model == "Accord" && year == 2015 && submodel == "LX" && variant == "LX-S") {
 vehicles = [
   {
+      carId: 1,
     make: 1,
     model: 1,
     year: 2015,
@@ -115,6 +116,7 @@ vehicles = [
   //  price: 25,000,
  //   mileage: 10,000,
  //   fuelEfficiency: 30 mpg,
+      engine: "2.0L L4",
   },
 ];
 } else if (make == "Toyota" && model == "Camry" && year == 2015 && submodel == "LE" && variant == "LE") {
