@@ -64,8 +64,23 @@ export class FakeVehicleApi extends VehicleApi {
     return Promise.resolve(years);
         //return getYears(make, model);
     }
-    getSubmodels(make: number, model: number, year: number): Promise<string[]> {
-        return getSubmodels(make, model, year)
+    //getSubmodels(make: number, model: number, year: number): Promise<string[]> {
+    getSubmodels(make: string, model: string, year: string): Promise<string[]> {
+    // Get a list of submodels for a given make, model, and year.
+    let submodels: string[] = [];
+    if (make == "Honda" && model == "Accord" && year == "2015") {
+      submodels = ["LX", "EX", "EX-L", "Touring"];
+    } else if (make == "Toyota" && model == "Camry" && year == "2015") {
+      submodels = ["LE", "SE", "SE Hybrid", "XLE"];
+    } else if (make == "Ford" && model == "F-150" && year == "2015") {
+      submodels = ["XL", "XLT", "Lariat", "Platinum"];
+    } else if (make == "Chevy" && model == "Silverado" && year == "2015") {
+      submodels = ["WT", "LT", "LT Trail Boss", "High Country"];
+    }
+
+    // Return a Promise of a list of string submodels.
+    return Promise.resolve(submodels);
+        //return getSubmodels(make, model, year)
     }
     getVariants(make: number, model: number, year: number, submodel: string): Promise<string[]> {
         return getVariants(make, model, year, submodel)
